@@ -1,0 +1,1182 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
+	type="text/javascript"></script>
+    <style>
+		@media screen and (min-width: 602px; max-width:602px;) { #img1 {width: 100%;} .vmenu{padding: 5px 100%;}}
+		body{
+			margin: 0 0;
+			padding: 0;
+		}
+    .line {
+        position: absolute;
+        background: linear-gradient(90deg, rgb(255, 255, 255) 10%, #f80 ,rgb(255, 255, 255) 90%); 
+        height: 0.1%;
+        width: 100%;  
+		min-width: 800px;
+}
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		min-width: 800px;
+        }
+    .vmenu{
+        border: 1px solid #f80;
+        box-shadow: 0px 0px 15px 3px black;
+        text-decoration: none;
+		color: #f80;
+        width: 100px;      
+        font-size: 20px;
+        padding: 5px 45px;
+        border-radius: 20px;
+		
+    }
+    .vmenu:hover{
+        background-color: #f80;
+		color: black;
+    }
+
+    	.textbludo{
+			color: black;
+			text-decoration: none;
+			padding: 0px 4px;
+		}
+		.textbludo1{
+			color: black;
+			text-decoration: none;
+			padding: 0px 7.5px;
+			background-color: #1a1;
+			border-radius: 0 5px 5px 0;
+			position: relative;
+			bottom: -15px;
+			width: min-content;
+		}
+		.textbludo1:active{
+			background-color: #ea0;
+		}
+        .menud{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-self: center;
+			align-items: center;
+					
+			min-width: 800px;
+		}
+        .button1{
+			width: 40px;
+			height: 20px;
+			background-color: black;
+			position: absolute;
+			margin-top: 55px;
+			margin-left: 210px;
+			text-decoration: none;
+			color: #ff8a00;
+			text-align: center;
+			border-radius: 4px;
+		}
+		.button1:hover{
+			background-color: grey;
+		}
+		.button1:active{
+			background-color: #ff8a00;
+			color: black;
+		}
+        .bludo{
+			margin-left: 60px;
+			margin-top: 35px;
+			background-color: rgb(255, 255, 255);
+			height: 375px;
+			width: 275px;
+			box-shadow: 0px 0px 15px 1px #000000;
+			border-radius: 10px;	
+			display: flex;
+			flex-direction: column;		
+			flex-basis: 300px;
+			
+		}
+		.wbludo{
+			border-radius: 10px 10px 0 0;
+			
+		}
+		#opis{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background-color: rgb(100, 100, 100);
+			z-index: 1;
+			opacity: 0%;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			right: 100%;
+			text-align: center;
+		}
+		#opopis{
+			
+			font-size: 28px;
+			text-decoration: none;
+			color: black;
+			align-self: center;
+		}
+		#opopis1{
+			
+			font-size: 23px;
+			text-decoration: none;
+			color: black;
+			align-self: center;
+			
+		}
+		#back{
+			text-decoration: none;
+			max-width: 150px;
+			min-width: 40px;
+			max-height: 100px;
+		}
+		#img1{
+			align-self: center;
+			min-height: 65%;
+			max-height: 100%;
+			min-width: 65%;
+			max-width: 100%;
+			width: 750px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 20px 5px#000000;
+			border: 1px solid black;
+		}
+		#img2{			
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			min-width: 800px;
+		}
+		.h1p{
+			min-width: 800px;
+		}
+		.h2p{
+			min-width: 800px;
+			font-size: 15px;
+		}
+		#bludam{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(255, 255, 255) ,rgb(0, 0, 0) 100%);
+			z-index: 1;
+			opacity: 0%;
+			display: none;
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+		}
+		.amenu{
+			border: 1px solid rgb(130, 236, 228);
+        	box-shadow: 0px 0px 15px 3px black;
+        	text-decoration: none;
+			color: rgb(0, 0, 0);
+			background-color: rgb(212, 246, 255);
+    	    width: 150px;      
+     	   	font-size: 20px;
+  	      	padding: 5px 45px;
+     	  	border-radius: 20px;
+		}
+		.amenu:hover{
+        background-color: rgb(255, 255, 255);
+		color: black;
+    }
+    </style>
+</head>
+<body>	
+	<div id="bludam">
+		
+		<a class="amenu" onclick="bludaBACK()" href="#t1">Закуски</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t2">Салаты</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t3">Супы</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t4">Рыба</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t5">Бургеры</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t6">Блюда из птицы</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t7">Мучные блюда</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t8">Мясные блюда</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t9">Мангал</a><br>
+        <a class="amenu" onclick="bludaBACK()" href="#t10">Десерты</a><br>
+		<a id="bludaBACK" class="amenu" onclick="bludaBACK()">Назад</a>
+		
+	</div>
+
+	<div id="opis">
+		<div id="back"><img src="strl.png" width="100px" align="left"></div>
+		<img src="burratolep.jpg" alt="Тут должно быть Мясо"  id="img1">
+		<br>
+		<b><a href="#" id="opopis">Буррато на лепешке</a></b>
+		<br>
+		<a href="#" id="opopis1">Какие-то добавки</a>
+		
+	</div>
+	<div id="img2"><img src="logo.png" height="225px"></div>
+	<h1 class="h2p" align="center">Коркмасова 74</h1>
+
+    <div class="menu">
+        <a class="vmenu">Завтраки</a><br>
+        <a class="vmenu" onclick="bluda()">Блюда</a><br>
+        <a class="vmenu">Напитки</a><br>
+        <a class="vmenu">Десерты</a><br>
+    </div>
+<br>
+
+    <div class="line"></div>
+    
+	<h1 class="h1p" align="center" id="t1">Закуски</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="burratolep()"><img class="wbludo" src="burratolep.jpg" height="300px" width="100%">
+			<a class="textbludo" >Буррато на лепешке</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="ezme()"><img class="wbludo" src="ezme.jpg" height="300px" width="100%">
+			<a class="textbludo" >Эзме</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="khumus()"><img class="wbludo" src="khumus.jpg" height="300px" width="100%">
+			<a class="textbludo" >Хумус</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="muammara()"><img class="wbludo" src="muammara.jpg" height="300px" width="100%">
+			<a class="textbludo" >Муаммара</a><a class="textbludo1" >450</a>
+		</div>
+		<div class="bludo" onclick="mutabal()"><img class="wbludo" src="mutabal.jpg" height="300px" width="100%">
+			<a class="textbludo" >Мутабаль</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="khumusTel()"><img class="wbludo" src="khumusTel.jpg" height="300px" width="100%">
+			<a class="textbludo" >Хумус с Телятиной</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="PadlavasBr()"><img class="wbludo" src="PadlavasBr.jpg" height="300px" width="100%">
+			<a class="textbludo" >Падлаваш с брынзой</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="tigrkrev()"><img class="wbludo" src="tigrkrev.jpg" height="300px" width="100%">
+			<a class="textbludo" >Тигровые креветки</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="sigarab()"><img class="wbludo" src="sigarab.jpg" height="300px" width="100%">
+			<a class="textbludo" >Сигара борек</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="ruletbakl()"><img class="wbludo" src="ruletbakl.jpg" height="300px" width="100%">
+			<a class="textbludo" >Рулетики из баклажана</a><a class="textbludo1" >450р</a>
+		</div>	
+
+	</div>
+
+	<h1 class="h1p" align="center" id="t2">Салаты</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="burrato()"><img class="wbludo" src="burrato.jpg" height="300px" width="100%">
+			<a class="textbludo" >Буррато с помидорами и базиликом</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="ovosnar()"><img class="wbludo" src="ovosnar.jpg" height="300px" width="100%">
+			<a class="textbludo" >Овощная нарезка</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="domsal()"><img class="wbludo" src="domsal.jpg" height="300px" width="100%">
+			<a class="textbludo" >Чобан салат</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kasik()"><img class="wbludo" src="kasik.jpg" height="300px" width="100%">
+			<a class="textbludo" >Кашык-салат</a><a class="textbludo1" >450</a>
+		</div>
+		<div class="bludo" onclick="mangals()"><img class="wbludo" src="mangals.jpg" height="300px" width="100%">
+			<a class="textbludo" >Мангал салат</a><a class="textbludo1" >450</a>
+		</div>
+		<div class="bludo" onclick="tabule()"><img class="wbludo" src="tabule.jpg" height="300px" width="100%">
+			<a class="textbludo" >Табуле</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="grech()"><img class="wbludo" src="grech.jpg" height="300px" width="100%">
+			<a class="textbludo" >Греческий салат</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="cezkre()"><img class="wbludo" src="cezkre.jpg" height="300px" width="100%">
+			<a class="textbludo" >Цезарь с креветками</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="cezkur()"><img class="wbludo" src="cezkur.jpg" height="300px" width="100%">
+			<a class="textbludo" >Цезарь с куриной грудкой</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="tskurp2()"><img class="wbludo" src="tskurp2.jpg" height="300px" width="100%">
+			<a class="textbludo" >Теплый салат с куриной печенью</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="tskuravok()"><img class="wbludo" src="tskuravok.jpg" height="300px" width="100%">
+			<a class="textbludo" >Теплый салат с куринцей и авокадо</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="tsgovv()"><img class="wbludo" src="tsgovv.jpg" height="300px" width="100%">
+			<a class="textbludo" >Теплый салат с говяжьей вырезкой и яйцом пашот</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="salbakl()"><img class="wbludo" src="salbakl.jpg" height="300px" width="100%">
+			<a class="textbludo" >Салат из баклажанов</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="salavok()"><img class="wbludo" src="salavok.jpg" height="300px" width="100%">
+			<a class="textbludo" >Салат с авокадо</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="mixgov()"><img class="wbludo" src="mixgov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Микс салат с говядиной</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="mixkur()"><img class="wbludo" src="mixkur.jpg" height="300px" width="100%">
+			<a class="textbludo" >Микс салат с курицей</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="kaprese()"><img class="wbludo" src="kaprese.jpg" height="300px" width="100%">
+			<a class="textbludo" >Капрезе</a><a class="textbludo1" >450р</a>
+		</div>	
+	</div>
+
+	<h1 class="h1p" align="center" id="t3">Супы</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="chuchvara()"><img class="wbludo" src="chuchvara.jpg" height="300px" width="100%">
+			<a class="textbludo" >Чучвара</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="dusp()"><img class="wbludo" src="dusp.jpg" height="300px" width="100%">
+			<a class="textbludo" >Дюшпара</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="gribsup()"><img class="wbludo" src="gribsup.jpg" height="300px" width="100%">
+			<a class="textbludo" >Грибной крем-суп</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="tikvsup()"><img class="wbludo" src="tikvsup.jpg" height="300px" width="100%">
+			<a class="textbludo" >Тыквенный крем-суп</a><a class="textbludo1" >450</a>
+		</div>
+		<div class="bludo" onclick="chechsup()"><img class="wbludo" src="chechsup.jpg" height="300px" width="100%">
+			<a class="textbludo" >Чечевичный крем-суп</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="barlap()"><img class="wbludo" src="barlap.jpg" height="300px" width="100%">
+			<a class="textbludo" >Суп из бараньей голени</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="kurlap()"><img class="wbludo" src="kurlap.jpg" height="300px" width="100%">
+			<a class="textbludo" >Суп куринный с домашней лапшой</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="tomya()"><img class="wbludo" src="tomya.jpg" height="300px" width="100%">
+			<a class="textbludo" >Острый суп с морепродуктами</a><a class="textbludo1" >450р</a>
+		</div>	
+
+	</div>
+
+	<h1 class="h1p" align="center" id="t4">Рыба</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="semgapech()"><img class="wbludo" src="semgapech.jpg" height="300px" width="100%">
+			<a class="textbludo" >Семга с овощами в печи</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="semgaapels()"><img class="wbludo" src="semgaapels.jpg" height="300px" width="100%">
+			<a class="textbludo" >Семга под апельсиновым соусом</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="dorado()"><img class="wbludo" src="dorado.jpg" height="300px" width="100%">
+			<a class="textbludo" >Дорадо на гриле</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="phorelpech()"><img class="wbludo" src="phorelpech.jpg" height="300px" width="100%">
+			<a class="textbludo" >Форель в печи</a><a class="textbludo1" >450</a>
+		</div>
+		<div class="bludo" onclick="phorelgril()"><img class="wbludo" src="phorelgril.jpg" height="300px" width="100%">
+			<a class="textbludo" >Форель на гриле</a><a class="textbludo1" >450р</a>
+		</div>	
+
+	</div>
+	
+	<h1 class="h1p" align="center" id="t5">Бургеры</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="etburg()"><img class="wbludo" src="etburg.jpg" height="300px" width="100%">
+			<a class="textbludo" >Эт Бургер</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="tavburg()"><img class="wbludo" src="tavburg.jpg" height="300px" width="100%">
+			<a class="textbludo" >Тавук Бургер</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="kalkburg()"><img class="wbludo" src="kalkburg.jpg" height="300px" width="100%">
+			<a class="textbludo" >Калкан Бургер</a><a class="textbludo1" >450р</a>
+		</div>
+
+	</div>
+
+	<h1 class="h1p" align="center" id="t6">Блюда из птицы</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="patltavuk()"><img class="wbludo" src="patltavuk.jpg" height="300px" width="100%">
+			<a class="textbludo" >Патлыжан тавук</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="jarkoe()"><img class="wbludo" src="jarkoe.jpg" height="300px" width="100%">
+			<a class="textbludo" >Жаркое из курицы</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="kurgrib()"><img class="wbludo" src="kurgrib.jpg" height="300px" width="100%">
+			<a class="textbludo" >Куриная грудка под сливочно-грибным соусом</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kurspinat()"><img class="wbludo" src="kurspinat.jpg" height="300px" width="100%">
+			<a class="textbludo" >Куриная грудка под сливочно-шпинатным соусом</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kurbedra()"><img class="wbludo" src="kurbedra.jpg" height="300px" width="100%">
+			<a class="textbludo" >Куриные бедрышки под сливочно-грибным соусом</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kertkur()"><img class="wbludo" src="kertkur.jpg" height="300px" width="100%">
+			<a class="textbludo" >Керамит тава из курицы</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kurbakl()"><img class="wbludo" src="kurbakl.jpg" height="300px" width="100%">
+			<a class="textbludo" >Курица с баклажаном</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kursteik()"><img class="wbludo" src="kursteik.jpg" height="300px" width="100%">
+			<a class="textbludo" >Куриный стейк с овощами гриль</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="fasule()"><img class="wbludo" src="fasule.jpg" height="300px" width="100%">
+			<a class="textbludo" >Фасуле тавук</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="sadjkur()"><img class="wbludo" src="sadjkur.jpg" height="300px" width="100%">
+			<a class="textbludo" >Садж из курицы</a><a class="textbludo1" >450р</a>
+		</div>
+
+	</div>
+
+	<h1 class="h1p" align="center" id="t7">Мучные блюда</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="lahmadju()"><img class="wbludo" src="lahmadju.jpg" height="300px" width="100%">
+			<a class="textbludo" >Лахмаджун</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="pidegov()"><img class="wbludo" src="pidegov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Пиде с говядиной</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="pidekur()"><img class="wbludo" src="pidekur.jpg" height="300px" width="100%">
+			<a class="textbludo" >Пиде с курицей</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="pidesir()"><img class="wbludo" src="pidesir.jpg" height="300px" width="100%">
+			<a class="textbludo" >Пиде с сыром</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="pidespinat()"><img class="wbludo" src="pidespinat.jpg" height="300px" width="100%">
+			<a class="textbludo" >Пиде со шпинатом</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="pideoff()"><img class="wbludo" src="pideoff.jpg" height="300px" width="100%">
+			<a class="textbludo" >Фырын кебаб пиде</a><a class="textbludo1" >450р</a>
+		</div>
+		
+	</div>
+
+	<h1 class="h1p" align="center" id="t8">Мясные блюда</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="tomagavk()"><img class="wbludo" src="tomagavk.jpg" height="300px" width="100%">
+			<a class="textbludo" >Стейк Томагавк</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="tibon()"><img class="wbludo" src="tibon.jpg" height="300px" width="100%">
+			<a class="textbludo" >Стейк Тибон</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="ribai()"><img class="wbludo" src="ribai.jpg" height="300px" width="100%">
+			<a class="textbludo" >Стейк Рибай</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="arabplov()"><img class="wbludo" src="arabplov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Баранья лопатка с Арабским пловом</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="sadjgov()"><img class="wbludo" src="sadjgov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Садж из говядины</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kertgov()"><img class="wbludo" src="kertgov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Керамит тава из говядины</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kalkk()"><img class="wbludo" src="kalkk.jpg" height="300px" width="100%">
+			<a class="textbludo" >Калкан кефте</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="rogandj()"><img class="wbludo" src="rogandj.jpg" height="300px" width="100%">
+			<a class="textbludo" >Роган Джош</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="keramitk()"><img class="wbludo" src="keramitk.jpg" height="300px" width="100%">
+			<a class="textbludo" >Керамит кефте</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="turpelm()"><img class="wbludo" src="turpelm.jpg" height="300px" width="100%">
+			<a class="textbludo" >Турецкие пельмешки</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="hunkerb()"><img class="wbludo" src="hunkerb.jpg" height="300px" width="100%">
+			<a class="textbludo" >Хункер бегенди</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="barrebra()"><img class="wbludo" src="barrebra.jpg" height="300px" width="100%">
+			<a class="textbludo" >Бараньи ребра по-Турецки</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="tomltelrebra()"><img class="wbludo" src="tomltelrebra.jpg" height="300px" width="100%">
+			<a class="textbludo" >Томленые телячьи ребра</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="minioni()"><img class="wbludo" src="minioni.jpg" height="300px" width="100%">
+			<a class="textbludo" >Миньоны из телятины на подушке из шпината</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="medi()"><img class="wbludo" src="medi.jpg" height="300px" width="100%">
+			<a class="textbludo" >Медальоны из телятины с овощами гриль</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="minimedi()"><img class="wbludo" src="minimedi.jpg" height="300px" width="100%">
+			<a class="textbludo" >Мини медальоны с картофельным пюре под сливочно-грибным соусом</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="daydpasa()"><img class="wbludo" src="daydpasa.jpg" height="300px" width="100%">
+			<a class="textbludo" >Давуд Паша</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="zaravshan()"><img class="wbludo" src="zaravshan.jpg" height="300px" width="100%">
+			<a class="textbludo" >Заравшан</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="telgov()"><img class="wbludo" src="telgov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Телятина с баклажаном под томатным соусом</a><a class="textbludo1" >450р</a>
+		</div>
+
+	</div>
+
+	<h1 class="h1p" align="center" id="t9">Мангал</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="lulakur()"><img class="wbludo" src="lulakur.jpg" height="300px" width="100%">
+			<a class="textbludo" >Люля-кебаб из курицы</a><a class="textbludo1" >250р</a>
+		</div>	
+		<div class="bludo" onclick="lulagov()"><img class="wbludo" src="lulagov.jpg" height="300px" width="100%">
+			<a class="textbludo" >Люля-кебаб из говядины</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="adana()"><img class="wbludo" src="adana.jpg" height="300px" width="100%">
+			<a class="textbludo" >Адана-кебаб</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="saslkurfile()"><img class="wbludo" src="saslkurfile.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык из куриного филе</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="saslkurkril()"><img class="wbludo" src="saslkurkril.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык из куринных крылышек</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="saslkhan()"><img class="wbludo" src="saslkhan.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык ханский</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="baklkurd()"><img class="wbludo" src="baklkurd.jpg" height="300px" width="100%">
+			<a class="textbludo" >Баклажан с курдюком</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="patlkeb()"><img class="wbludo" src="patlkeb.jpg" height="300px" width="100%">
+			<a class="textbludo" >Патлыжан-кебаб</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="saslbar()"><img class="wbludo" src="saslbar.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык из баранины</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="sasltel()"><img class="wbludo" src="sasltel.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык из телятины</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kurbedraman()"><img class="wbludo" src="kurbedraman.jpg" height="300px" width="100%">
+			<a class="textbludo" >Куринные бедра на мангале</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="pomidkurd()"><img class="wbludo" src="pomidkurd.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык из помидоров</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kartkurd()"><img class="wbludo" src="kartkurd.jpg" height="300px" width="100%">
+			<a class="textbludo" >Картошка с курдюком</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="gribkurd()"><img class="wbludo" src="gribkurd.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шашлык грибной</a><a class="textbludo1" >450р</a>
+		</div>
+
+	</div>
+
+    <h1 class="h1p" align="center" id="t10">Десерты</h1>
+
+	<div class="menud">
+		<div class="bludo" onclick="d1()"><img class="wbludo" src="1d.jpg" height="300px" width="100%">
+			<a class="textbludo" >Профитроли</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="d2()"><img class="wbludo" src="2d.jpg" height="300px" width="100%">
+			<a class="textbludo" >Кунефе</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="kabak()"><img class="wbludo" src="kabak.jpg" height="300px" width="100%">
+			<a class="textbludo" >Кабак татлыси</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="d4()"><img class="wbludo" src="4d.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шоколадный фондан</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="d5()"><img class="wbludo" src="5d.jpg" height="300px" width="100%">
+			<a class="textbludo" >Наполеон</a><a class="textbludo1" >450р</a>
+		</div>		
+		<div class="bludo" onclick="belgvafli()"><img class="wbludo" src="belgvafli.jpg" height="300px" width="100%">
+			<a class="textbludo" >Бельгийские вафли</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="d6()"><img class="wbludo" src="6d.jpg" height="300px" width="100%">
+			<a class="textbludo" >Шоколадный тарт</a><a class="textbludo1" >450р</a>
+		</div>
+		<div class="bludo" onclick="d8()"><img class="wbludo" src="8d.jpg" height="300px" width="100%">
+			<a class="textbludo" >Апельсиновый пирог</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="aiva()"><img class="wbludo" src="aiva.jpg" height="300px" width="100%">
+			<a class="textbludo" >Айва татлыси</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="strudel()"><img class="wbludo" src="strudel.jpg" height="300px" width="100%">
+			<a class="textbludo" >Штрудель</a><a class="textbludo1" >450р</a>
+		</div>	
+		<div class="bludo" onclick="chizkeik()"><img class="wbludo" src="chizkeik.jpg" height="300px" width="100%">
+			<a class="textbludo" >Чизкейк</a><a class="textbludo1" >450р</a>
+		</div>	
+			
+	</div>
+	
+	
+
+	<script>
+		$(".bludo").click(function(){
+		document.getElementById('opis').style.transition = "opacity 1s, right 0.5s";
+		document.getElementById('opis').style.opacity = "100%";
+		document.getElementById('opis').style.right = "0%";
+	});
+
+	$("#back").click(function(){
+		document.getElementById('opis').style.transition = "opacity 10s, right 1.5s";
+		document.getElementById('opis').style.opacity = "0%";
+		document.getElementById('opis').style.right = "100%";
+	});
+	function bluda(){
+		document.getElementById('bludam').style.display = "flex";
+		setTimeout(menuv3, 250, 1);
+		function menuv3(){		
+		document.getElementById('bludam').style.transition = "opacity 0.65s";
+		document.getElementById('bludam').style.opacity = "100%";
+		}
+	}
+	function bludaBACK(){setTimeout(menuv1, 300, 1); function menuv1(){	
+		document.getElementById('bludam').style.transition = "opacity 0.65s";
+		document.getElementById('bludam').style.opacity = "0%";
+		setTimeout(menuv4, 650, 1);
+		function menuv4(){		
+		document.getElementById('bludam').style.display = "none";
+		}
+	}
+	}
+	function burratolep(){
+		document.getElementById('img1').src='burratolep.jpg';
+		document.getElementById('opopis').innerHTML = "Буррато на лепешке";
+		document.getElementById('opopis1').innerHTML = "Буррато c помидорами и базиликой на турецкой лепешке";
+	}
+	function ezme(){
+		document.getElementById('img1').src='ezme.jpg';
+		document.getElementById('opopis').innerHTML = "Эзме";
+		document.getElementById('opopis1').innerHTML = "Паста из мелкорубленных помидоров, <br> болгарского и острого перцев <br> с оливковым маслом и гранатовым соусом";
+	}
+	function khumus(){
+		document.getElementById('img1').src='khumus.jpg';
+		document.getElementById('opopis').innerHTML = "Хумус";
+		document.getElementById('opopis1').innerHTML = "Паста из нута, тахины <br> и лимонного сока <br> с оливковым маслом";
+	}
+	function muammara(){
+		document.getElementById('img1').src='muammara.jpg';
+		document.getElementById('opopis').innerHTML = "Муаммара";
+		document.getElementById('opopis1').innerHTML = "Острая паста из запеченных перцев <br> с грецким орехом и оливковым маслом";
+	}
+	function mutabal(){
+		document.getElementById('img1').src='mutabal.jpg';
+		document.getElementById('opopis').innerHTML = "Мутабаль";
+		document.getElementById('opopis1').innerHTML = "Запеченные баклажаны с тахиной <br> лимоном и оливковым маслом";
+	}
+	function khumusTel(){
+		document.getElementById('img1').src='khumusTel.jpg';
+		document.getElementById('opopis').innerHTML = "Хумус с телятиной";
+		document.getElementById('opopis1').innerHTML = "Хумус с обжаренной телячьей вырезкой, <br> кедровыми орешками и оливковым маслом";
+	}
+	function PadlavasBr(){
+		document.getElementById('img1').src='PadlavasBr.jpg';
+		document.getElementById('opopis').innerHTML = "Пад-лаваш с бранзой и овечьим сыром";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function tigrkrev(){
+		document.getElementById('img1').src='tigrkrev.jpg';
+		document.getElementById('opopis').innerHTML = "Тигровые креветки в сухарях";
+		document.getElementById('opopis1').innerHTML = "Тигровые креветки в панировочных <br> сухарях. Подаются со спайс соусом";
+	}
+	function sigarab(){
+		document.getElementById('img1').src='sigarab.jpg';
+		document.getElementById('opopis').innerHTML = "Сигара борек";
+		document.getElementById('opopis1').innerHTML = "Рулетики из теста Фило <br> с сырно-творожной начинкой, <br> обжаренные во фритюре";
+	}
+	function ruletbakl(){
+		document.getElementById('img1').src='ruletbakl.jpg';
+		document.getElementById('opopis').innerHTML = "Рулетики из баклажанов с сыром Фета";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+
+
+
+	function burrato(){
+		document.getElementById('img1').src='burrato.jpg';
+		document.getElementById('opopis').innerHTML = "Буррато с помидорами и базиликом";
+		document.getElementById('opopis1').innerHTML = "Буррато с помидорами и базиликом, салатом руккола, <br> под соусом песто";
+	}
+	function ovosnar(){
+		document.getElementById('img1').src='ovosnar.jpg';
+		document.getElementById('opopis').innerHTML = "Овощная нарезка";
+		document.getElementById('opopis1').innerHTML = "Ассории из сезонных овощей, <br> со свежей зеленью <br> и дагестанским сыром";
+	}
+	function domsal(){
+		document.getElementById('img1').src='domsal.jpg';
+		document.getElementById('opopis').innerHTML = "Чобан салат";
+		document.getElementById('opopis1').innerHTML = "Салат из огурцов, помидоров и лука <br> с оливковым маслом";
+	}
+	function mangals(){
+		document.getElementById('img1').src='mangals.jpg';
+		document.getElementById('opopis').innerHTML = "Мангал салат";
+		document.getElementById('opopis1').innerHTML = " <br>  <br> ";
+	}
+	function kasik(){
+		document.getElementById('img1').src='kasik.jpg';
+		document.getElementById('opopis').innerHTML = "Кашык-салат";
+		document.getElementById('opopis1').innerHTML = "Классический турецкий салат <br> из мелко нарезанных свежих овощей <br> с соусом наршараб, оливковым маслом <br> и сыром Фета";
+	}
+	function tabule(){
+		document.getElementById('img1').src='tabule.jpg';
+		document.getElementById('opopis').innerHTML = "Табуле";
+		document.getElementById('opopis1').innerHTML = "Ливанский салат из мелко рубленной <br> зелени с кус-кусом, заправленной <br> лимонным соком и оливковым маслом";
+	}
+	function grech(){
+		document.getElementById('img1').src='grech.jpg';
+		document.getElementById('opopis').innerHTML = "Греческий салат";
+		document.getElementById('opopis1').innerHTML = "Салат из огурцов, помидоров, <br> красного лука, оливок с сыром Фета, <br> заправленный лимонным фрешем <br> и оливковым маслом.";
+	}
+	function cezkre(){
+		document.getElementById('img1').src='cezkre.jpg';
+		document.getElementById('opopis').innerHTML = "Цезарь с креветками";
+		document.getElementById('opopis1').innerHTML = "Салат из листьев Романо и Латук <br> с тигровыми креветками и сыром Пармезан <br> с классический соусом Цезарь";
+	}
+	function cezkur(){
+		document.getElementById('img1').src='cezkur.jpg';
+		document.getElementById('opopis').innerHTML = "Цезарь с куриной грудкой";
+		document.getElementById('opopis1').innerHTML = "Салат из листьев Романо и Латук <br> с куриной грудкой и сыром Пармезан <br> с классический соусом Цезарь";
+	}
+	function tskurp2(){
+		document.getElementById('img1').src='tskurp2.jpg';
+		document.getElementById('opopis').innerHTML = "Теплый салат с куриной печенью";
+		document.getElementById('opopis1').innerHTML = "Миск салат из свежей зелени <br> с обжаренной куриной печенью, <br> каперсами, маслинами <br> и апельсином <br> в кисло-сладком соусе";
+	}
+	function tskuravok(){
+		document.getElementById('img1').src='tskuravok.jpg';
+		document.getElementById('opopis').innerHTML = "Теплый салат с куринцей и авокадо";
+		document.getElementById('opopis1').innerHTML = "Теплая куриная грудка со свежей зеленью, авокадо, помидорами Черри, <br> сыром Моцарелла, заправленная перечным соусом";
+	}
+	function tsgovv(){
+		document.getElementById('img1').src='tsgovv.jpg';
+		document.getElementById('opopis').innerHTML = "Теплый салат с говяжьей вырезкой и яйцом пашот";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function salbakl(){
+		document.getElementById('img1').src='salbakl.jpg';
+		document.getElementById('opopis').innerHTML = "Салат из баклажанов";
+		document.getElementById('opopis1').innerHTML = "Салат из баклажанов, свежих помидоров, <br> красного лука и граната, заправленный <br> оливковым маслом и лимонным соком";
+	}
+	function salavok(){
+		document.getElementById('img1').src='salavok.jpg';
+		document.getElementById('opopis').innerHTML = "Салат с авокадо";
+		document.getElementById('opopis1').innerHTML = "Салат из свежей зелени с початками кукурузы, кусочками авокадо, <br> сыра Пармезан, граната, заправленный лимонным соком и оливковым маслом";
+	}
+	function mixgov(){
+		document.getElementById('img1').src='mixgov.jpg';
+		document.getElementById('opopis').innerHTML = "Микс салат с говядиной";
+		document.getElementById('opopis1').innerHTML = "Микс малат с болгарским перцем <br> и обжаренной говядиной под острым соусом";
+	}
+	function mixkur(){
+		document.getElementById('img1').src='mixkur.jpg';
+		document.getElementById('opopis').innerHTML = "Микс салат с курицей";
+		document.getElementById('opopis1').innerHTML = "Микс из свежей зелени, огурцов <br> и болгарского перца с кусочками <br> обжаренной курицы в соевом соусе";
+	}
+	function kaprese(){
+		document.getElementById('img1').src='kaprese.jpg';
+		document.getElementById('opopis').innerHTML = "Капрезе";
+		document.getElementById('opopis1').innerHTML = "Капрезе с розовыми помидорами, сыром Моцарелла, базиликом и соусом песто";
+	}
+
+
+
+	function chuchvara(){
+		document.getElementById('img1').src='chuchvara.jpg';
+		document.getElementById('opopis').innerHTML = "Чучвара";
+		document.getElementById('opopis1').innerHTML = "Суп с мини пельменями, бараниной и овощами";
+	}
+	function dusp(){
+		document.getElementById('img1').src='dusp.jpg';
+		document.getElementById('opopis').innerHTML = "Дюшпара";
+		document.getElementById('opopis1').innerHTML = "Бараний бульон с мини пельмешками";
+	}
+	function gribsup(){
+		document.getElementById('img1').src='gribsup.jpg';
+		document.getElementById('opopis').innerHTML = "Грибной крем-суп";
+		document.getElementById('opopis1').innerHTML = "Грибной крем-суп из шампиньонов <br> со сливками";
+	}
+	function tikvsup(){
+		document.getElementById('img1').src='tikvsup.jpg';
+		document.getElementById('opopis').innerHTML = "Тыквенный крем-суп";
+		document.getElementById('opopis1').innerHTML = "Ароматный крем-суп из мускатной тыквы <br> со сливками и тыквенными семечками";
+	}
+	function chechsup(){
+		document.getElementById('img1').src='chechsup.jpg';
+		document.getElementById('opopis').innerHTML = "Чечевичный крем-суп";
+		document.getElementById('opopis1').innerHTML = "Крем-суп из красной чечевицы с восточными <br> специями и острым перцем";
+	}
+	function barlap(){
+		document.getElementById('img1').src='barlap.jpg';
+		document.getElementById('opopis').innerHTML = "Суп из бараньей голени";
+		document.getElementById('opopis1').innerHTML = "Баранья голень <br> в наваристом бульоне <br> с морковью и картофелем";
+	}
+	function kurlap(){
+		document.getElementById('img1').src='kurlap.jpg';
+		document.getElementById('opopis').innerHTML = "Суп куринный с домашней лапшой";
+		document.getElementById('opopis1').innerHTML = "Куринный суп с домашней лапшой, <br> с овощами и переплиным яйцом";
+	}
+	function tomya(){
+		document.getElementById('img1').src='tomya.jpg';
+		document.getElementById('opopis').innerHTML = "Острый суп с морепродуктами";
+		document.getElementById('opopis1').innerHTML = "Острый сливочный суп с мидиями, креветками, <br> кальмарами, морским гребешком";
+	}
+
+
+
+	function semgapech(){
+		document.getElementById('img1').src='semgapech.jpg';
+		document.getElementById('opopis').innerHTML = "Семга с овощами в печи";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function semgaapels(){
+		document.getElementById('img1').src='semgaapels.jpg';
+		document.getElementById('opopis').innerHTML = "Семга под апельсиновым соусом";
+		document.getElementById('opopis1').innerHTML = "Семга, обжаренная на гриле, на подушке из риса <br> под апельсиновым и сливочным соусами";
+	}
+	function dorado(){
+		document.getElementById('img1').src='dorado.jpg';
+		document.getElementById('opopis').innerHTML = "Дорадо на гриле";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function phorelpech(){
+		document.getElementById('img1').src='phorelpech.jpg';
+		document.getElementById('opopis').innerHTML = "Форель в печи";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function phorelgril(){
+		document.getElementById('img1').src='phorelgril.jpg';
+		document.getElementById('opopis').innerHTML = "Форель на гриле";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+
+
+
+	function etburg(){
+		document.getElementById('img1').src='etburg.jpg';
+		document.getElementById('opopis').innerHTML = "Эт Бургер";
+		document.getElementById('opopis1').innerHTML = "Бургер с мясной котлетой, запеченным картофелем <br> и салатом Коул-слоу";
+	}
+	function tavburg(){
+		document.getElementById('img1').src='tavburg.jpg';
+		document.getElementById('opopis').innerHTML = "Тавук Бургер";
+		document.getElementById('opopis1').innerHTML = "Бургер с куриной котлетой и картофельными чипсами";
+	}
+	function kalkburg(){
+		document.getElementById('img1').src='kalkburg.jpg';
+		document.getElementById('opopis').innerHTML = "Калкан Бургер";
+		document.getElementById('opopis1').innerHTML = "Мясной бургер с сырной начинкой";
+	}
+	
+	
+	
+	function patltavuk(){
+		document.getElementById('img1').src='patltavuk.jpg';
+		document.getElementById('opopis').innerHTML = "Патлыжан тавук";
+		document.getElementById('opopis1').innerHTML = "Кусочки куринного филе с грибами <br> и баклажанами в сливочном соусе";
+	}
+	function jarkoe(){
+		document.getElementById('img1').src='jarkoe.jpg';
+		document.getElementById('opopis').innerHTML = "Жаркое из курицы";
+		document.getElementById('opopis1').innerHTML = "Классическое жаркое на чугунной сковороде <br> из курицы с картошкой и грибами";
+	}
+	function kurgrib(){
+		document.getElementById('img1').src='kurgrib.jpg';
+		document.getElementById('opopis').innerHTML = "Куриная грудка под сливочно-грибным соусом";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function kurspinat(){
+		document.getElementById('img1').src='kurspinat.jpg';
+		document.getElementById('opopis').innerHTML = "Куриная грудка под сливочно-шпинатным соусом";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function kurbedra(){
+		document.getElementById('img1').src='kurbedra.jpg';
+		document.getElementById('opopis').innerHTML = "Куриные бедрышки под сливочно-грибным соусом";
+		document.getElementById('opopis1').innerHTML = "Куриные бедрышки с запеченным картофелем под сливочно-грибным соусом";
+	}
+	function kertkur(){
+		document.getElementById('img1').src='kertkur.jpg';
+		document.getElementById('opopis').innerHTML = "Керамит тава из курицы";
+		document.getElementById('opopis1').innerHTML = "Кусочки курицы с овощами в глиняной <br> лодочке, запеченные в турецкой печи";
+	}
+	function kurbakl(){
+		document.getElementById('img1').src='kurbakl.jpg';
+		document.getElementById('opopis').innerHTML = "Курица с баклажаном";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function kursteik(){
+		document.getElementById('img1').src='kursteik.jpg';
+		document.getElementById('opopis').innerHTML = "Куриный стейк с овощами гриль";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function fasule(){
+		document.getElementById('img1').src='fasule.jpg';
+		document.getElementById('opopis').innerHTML = "Фасуле тавук";
+		document.getElementById('opopis1').innerHTML = "Обжаренная куриная грудка на подушке <br> из стручковой фасоли под <br> сливочно-базиликовым соусом";
+	}
+	function sadjkur(){
+		document.getElementById('img1').src='sadjkur.jpg';
+		document.getElementById('opopis').innerHTML = "Садж из курицы";
+		document.getElementById('opopis1').innerHTML = "Кусочки курицы <br> с овощами, обжаренные <br> на специальной сковороде";
+	}
+
+
+
+	function lahmadju(){
+		document.getElementById('img1').src='lahmadju.jpg';
+		document.getElementById('opopis').innerHTML = "Лахмадун";
+		document.getElementById('opopis1').innerHTML = "Тонкая лепешка на пресном тесте <br> с острым мясным фаршем";
+	}
+	function pidegov(){
+		document.getElementById('img1').src='pidegov.jpg';
+		document.getElementById('opopis').innerHTML = "Пиде с говядиной";
+		document.getElementById('opopis1').innerHTML = "Пиде с говяжьей мякостью, овощами и сыром Моцарелла";
+	}
+	function pidekur(){
+		document.getElementById('img1').src='pidekur.jpg';
+		document.getElementById('opopis').innerHTML = "Пиде с курицей";
+		document.getElementById('opopis1').innerHTML = "Пиде с куриным филе, овощами и сыром Моцарелла";
+	}
+	function pidesir(){
+		document.getElementById('img1').src='pidesir.jpg';
+		document.getElementById('opopis').innerHTML = "Пиде с сыром";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function pidespinat(){
+		document.getElementById('img1').src='pidespinat.jpg';
+		document.getElementById('opopis').innerHTML = "Пиде со шпинатом";
+		document.getElementById('opopis1').innerHTML = "Пиде со шпинатом и сыром Моцарелла";
+	}
+	function pideoff(){
+		document.getElementById('img1').src='pideoff.jpg';
+		document.getElementById('opopis').innerHTML = "Фырын кебаб пиде";
+		document.getElementById('opopis1').innerHTML = "Закрытое пиде с острым мясным фаршем и сыром Моцарелла";
+	}
+
+
+
+	function tomagavk(){
+		document.getElementById('img1').src='tomagavk.jpg';
+		document.getElementById('opopis').innerHTML = "Стейк Томагавк";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function tibon(){
+		document.getElementById('img1').src='tibon.jpg';
+		document.getElementById('opopis').innerHTML = "Стейк Тибон";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function ribai(){
+		document.getElementById('img1').src='ribai.jpg';
+		document.getElementById('opopis').innerHTML = "Стейк Рибай";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function arabplov(){
+		document.getElementById('img1').src='arabplov.jpg';
+		document.getElementById('opopis').innerHTML = "Баранья лопатка с Арабским пловом";
+		document.getElementById('opopis1').innerHTML = "Арабский плов <br> с томленой бараньей лопаткой, <br> орешками и сухофруктами";
+	}
+	function sadjgov(){
+		document.getElementById('img1').src='sadjgov.jpg';
+		document.getElementById('opopis').innerHTML = "Садж из говядины";
+		document.getElementById('opopis1').innerHTML = "Кусочки говядины <br> с овощами, обжаренные <br> на специальной сковороде";
+	}
+	function kertgov(){
+		document.getElementById('img1').src='kertgov.jpg';
+		document.getElementById('opopis').innerHTML = "Керамит тава из говядины";
+		document.getElementById('opopis1').innerHTML = "Кусочки говядины с овощами в глиняной <br> лодочке, запеченные в турецкой печи";
+	}
+	function kalkk(){
+		document.getElementById('img1').src='kalkk.jpg';
+		document.getElementById('opopis').innerHTML = "Калкан кефте";
+		document.getElementById('opopis1').innerHTML = "Мясная котлета с сыром Моцарелла <br> и сыром Чеддер, подается на лепешке <br> с салатом";
+	}
+	function rogandj(){
+		document.getElementById('img1').src='rogandj.jpg';
+		document.getElementById('opopis').innerHTML = "Пиде с говядиной";
+		document.getElementById('opopis1').innerHTML = "Тушеные кусочки говядины <br> с шампиньонами в сливочном соусе";
+	}
+	function keramitk(){
+		document.getElementById('img1').src='keramitk.jpg';
+		document.getElementById('opopis').innerHTML = "Керамит кефте";
+		document.getElementById('opopis1').innerHTML = "Тефтели с овощами, <br> запеченные в турецкой печи";
+	}
+	function turpelm(){
+		document.getElementById('img1').src='turpelm.jpg';
+		document.getElementById('opopis').innerHTML = "Турецкие пельмешки";
+		document.getElementById('opopis1').innerHTML = "Мини пельмешки с греческим йогуртом <br> и сливочным маслом";
+	}
+	function hunkerb(){
+		document.getElementById('img1').src='hunkerb.jpg';
+		document.getElementById('opopis').innerHTML = "Хункер бегенди";
+		document.getElementById('opopis1').innerHTML = "Томленная баранина с болгарским перцем <br> на баклажановом пюре с сыром Моцарелла";
+	}
+	function barrebra(){
+		document.getElementById('img1').src='barrebra.jpg';
+		document.getElementById('opopis').innerHTML = "Бараньи ребра по-Турецки";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function tomltelrebra(){
+		document.getElementById('img1').src='tomltelrebra.jpg';
+		document.getElementById('opopis').innerHTML = "Томленые телячьи ребра";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function minioni(){
+		document.getElementById('img1').src='minioni.jpg';
+		document.getElementById('opopis').innerHTML = "Миньоны из телятины на подушке из шпината";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function medi(){
+		document.getElementById('img1').src='medi.jpg';
+		document.getElementById('opopis').innerHTML = "Медальоны из телятины с овощами гриль";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function minimedi(){
+		document.getElementById('img1').src='minimedi.jpg';
+		document.getElementById('opopis').innerHTML = "Мини медальоны с картофельным пюре под сливочно-грибным соусом";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function daydpasa(){
+		document.getElementById('img1').src='daydpasa.jpg';
+		document.getElementById('opopis').innerHTML = "Давуд Паша";
+		document.getElementById('opopis1').innerHTML = "Тефтельки, окра, помидор, <br> перец болгарский, мини лук";
+	}
+	function zaravshan(){
+		document.getElementById('img1').src='zaravshan.jpg';
+		document.getElementById('opopis').innerHTML = "Заравшан";
+		document.getElementById('opopis1').innerHTML = "Говяжья вырезка с зеленой фасолью <br> обжаренные на сковороде при большой температуре";
+	}
+	function telgov(){
+		document.getElementById('img1').src='telgov.jpg';
+		document.getElementById('opopis').innerHTML = "Телятина с баклажаном под томатным соусом";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+
+
+
+	function lulakur(){
+		document.getElementById('img1').src='lulakur.jpg';
+		document.getElementById('opopis').innerHTML = "Люля-кебаб из курицы";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function lulagov(){
+		document.getElementById('img1').src='lulagov.jpg';
+		document.getElementById('opopis').innerHTML = "Люля-кебаб из говядины";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function adana(){
+		document.getElementById('img1').src='adana.jpg';
+		document.getElementById('opopis').innerHTML = "Адана-кебаб (острый люля-кебаб из говядины)";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function saslkurfile(){
+		document.getElementById('img1').src='saslkurfile.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык из куриного филе";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function saslkurkril(){
+		document.getElementById('img1').src='saslkurkril.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык из куринных крылышек";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function saslkhan(){
+		document.getElementById('img1').src='saslkhan.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык ханский";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function baklkurd(){
+		document.getElementById('img1').src='baklkurd.jpg';
+		document.getElementById('opopis').innerHTML = "Баклажан с курдюком";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function patlkeb(){
+		document.getElementById('img1').src='patlkeb.jpg';
+		document.getElementById('opopis').innerHTML = "Патлыжан-кебаб";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function saslbar(){
+		document.getElementById('img1').src='saslbar.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык из баранины";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function sasltel(){
+		document.getElementById('img1').src='sasltel.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык из телятины";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function kurbedraman(){
+		document.getElementById('img1').src='kurbedraman.jpg';
+		document.getElementById('opopis').innerHTML = "Куринные бедра на мангале";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function pomidkurd(){
+		document.getElementById('img1').src='pomidkurd.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык из помидоров";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function kartkurd(){
+		document.getElementById('img1').src='kartkurd.jpg';
+		document.getElementById('opopis').innerHTML = "Картошка с курдюком";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+	function gribkurd(){
+		document.getElementById('img1').src='gribkurd.jpg';
+		document.getElementById('opopis').innerHTML = "Шашлык грибной";
+		document.getElementById('opopis1').innerHTML = "";
+	}
+
+
+
+	function d1(){
+		document.getElementById('img1').src='1d.jpg';
+		document.getElementById('opopis').innerHTML = "Профитроли";
+		document.getElementById('opopis1').innerHTML = "Профитроли покрытые горячим шоколадом <br> на подушке из бананов и ванильного крема";
+	}
+	function d2(){
+		document.getElementById('img1').src='2d.jpg';
+		document.getElementById('opopis').innerHTML = "Кунефе";
+		document.getElementById('opopis1').innerHTML = "Восточный десерт с сырной начинкой, <br> приготовленный на основе теста катаифи";
+	}
+	function kabak(){
+		document.getElementById('img1').src='kabak.jpg';
+		document.getElementById('opopis').innerHTML = "Кабак татлыси";
+		document.getElementById('opopis1').innerHTML = "Тыква, запеченная в собственном соку, <br> подается с тыквенным урбечем, семечками <br> и дробленым орехом";
+	}
+	function d4(){
+		document.getElementById('img1').src='4d.jpg';
+		document.getElementById('opopis').innerHTML = "Шоколадный фондан";
+		document.getElementById('opopis1').innerHTML = "Французский десерт из шоколадного бисквита <br> с жидкой сердцевиной и хрустящей оболочкой";
+	}
+	function d5(){
+		document.getElementById('img1').src='5d.jpg';
+		document.getElementById('opopis').innerHTML = "Наполеон";
+		document.getElementById('opopis1').innerHTML = "Слоеное пирожное с бананом и ванильным кремом";
+	}
+	function belgvafli(){
+		document.getElementById('img1').src='belgvafli.jpg';
+		document.getElementById('opopis').innerHTML = "Бельгийские вафли";
+		document.getElementById('opopis1').innerHTML = "Бельгийские вафли с ванильным кремом и бананом";
+	}
+	function d6(){
+		document.getElementById('img1').src='6d.jpg';
+		document.getElementById('opopis').innerHTML = "Шоколадный тарт";
+		document.getElementById('opopis1').innerHTML = "Открытый пирог с шоколадной начинкой";
+	}
+	function d8(){
+		document.getElementById('img1').src='8d.jpg';
+		document.getElementById('opopis').innerHTML = "Апельсиновый пирог";
+		document.getElementById('opopis1').innerHTML = "Апельсиновый пирог <br> с шариком сливочного мороженного";
+	}
+	function aiva(){
+		document.getElementById('img1').src='aiva.jpg';
+		document.getElementById('opopis').innerHTML = "Айва татлыси";
+		document.getElementById('opopis1').innerHTML = "Айва, запеченная в собственном соку, <br> подается с мороженым и сыром маскарпоне";
+	}
+	function strudel(){
+		document.getElementById('img1').src='strudel.jpg';
+		document.getElementById('opopis').innerHTML = "Штрудель";
+		document.getElementById('opopis1').innerHTML = "Штрудель с начинкой из груши <br> и яблока под карамельным соусом";
+	}
+	function chizkeik(){
+		document.getElementById('img1').src='chizkeik.jpg';
+		document.getElementById('opopis').innerHTML = "Чизкейк";
+		document.getElementById('opopis1').innerHTML = "Десерт из творожного сыра, манго, маракуйя, чиа";
+	}
+	</script>
+	
+
+</body>
+</html>
